@@ -4,9 +4,9 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class LoanCalculator {
-    private static double calculateFixedInstallment(double kwotaKredytu, double oprocentowanie,
+    private static double calculateFixedInstallment(double loanAmount, double oprocentowanie,
                                           int liczbaRat) {
         double q = 1 + (oprocentowanie / 12);
-        return (kwotaKredytu * oprocentowanie) / (12 * (1 + Math.pow(q, -liczbaRat)));
+        return (loanAmount * oprocentowanie) / (12 * (1 + Math.pow(q, -liczbaRat)));
     }
 }
